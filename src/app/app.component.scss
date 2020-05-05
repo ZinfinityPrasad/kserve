@@ -6,7 +6,7 @@ html {
 body {
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
+	// min-height: 100vh;
 }
 
 .header {
@@ -27,7 +27,7 @@ body {
 }
 
 .main {
-	min-height: 800px;
+	// min-height: 800px;
 	padding: 60px 0px 0px;
 	flex: 1;
 }

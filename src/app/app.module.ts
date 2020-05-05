@@ -10,20 +10,28 @@ import { ProcessComponent } from './components/process/process.component';
 import { EvaluationComponent } from './components/evaluation/evaluation.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ViewallagentsComponent } from './components/viewallagents/viewallagents.component';
+import { SelectionComponent } from './components/selection/selection.component';
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ProcessComponent,
     EvaluationComponent,
-    ViewallagentsComponent
+    ViewallagentsComponent,
+    SelectionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,MaterialModule,
     FormsModule,
-        ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

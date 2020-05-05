@@ -1,0 +1,39 @@
+<div style="display: flex; flex-direction: row; justify-content: center;">
+    <mat-card style="width: 60%; height: 50%; margin-top: 10%;">
+
+        <div style="width: 75%; margin: 0 auto;">
+            <h3>Select Process</h3>
+            <mat-form-field appearance="outline" style="width: 100%;">
+                <mat-label>Select One Process</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let process of processes" [value]="process.value">
+                        {{process.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div style="width: 75%; margin: 0 auto;">
+            <h4 style="font-family: 'Montserrat', sans-serif;">Select Call Type</h4>
+            <br>
+            <div style="display: flex; flex-direction: row;">
+                <div class="radio" style="display: flex; flex-direction: row;">
+                    <label>
+                        <input type="radio" name="boolean" value="Inbound" (click)="setradio('Inbound')"
+                            ngModel>
+                         Inbound
+                    </label>
+                </div>
+                <div class="radio" style="display: flex; flex-direction: row; margin-left: 20px;">
+                    <label>
+                        <input type="radio" name="boolean" value="Outbound" (click)="setradio('Outbound')"
+                            ngModel>
+                         Outbound 
+                    </label>
+                </div>
+            </div>
+        </div> 
+        <div>
+            <button mat-raised-button color="primary" style="float: right;" routerLink="/viewallagents"> Next </button>
+        </div>
+    </mat-card>
+</div>
