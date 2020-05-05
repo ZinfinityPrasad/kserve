@@ -1,0 +1,206 @@
+
+
+$template-color: #dedede;
+
+.browser-template {
+    height: auto;
+    overflow: hidden;
+    border: 3px solid $template-color;
+    border-top: none;
+    border-radius: 8px;
+    
+    &__top-bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 10px;
+        background: $template-color;
+    }
+    
+    &__buttons {
+        display: flex;
+        
+        &_item {
+            width: 10px;
+            height: 10px;
+            margin-left: 5px;
+            border-radius: 100px;
+            background: darken($template-color, 10%);
+            
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+    
+    &__address {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+        height: 25px;
+        margin: 0 15px;
+        border-radius: 4px;
+        background: lighten($template-color, 10%);
+    }
+    
+    &__controls {
+        display: flex;
+        
+        &_item {
+            width: 12px;
+            height: 8px;
+            margin-left: 10px;
+            color: darken($template-color, 15%);
+            
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+
+
+// Demo
+body {
+    padding: 15px;
+    background: #F7F8FB;
+}
+
+.browser-template {
+    margin: 0 auto;
+    max-width: 1200px;
+    height: auto;
+}
+
+.radio{
+    padding-right: 7px;
+
+}
+
+input[type="radio"] {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+    transform: scale(1.5);
+}
+//for expansion pannel
+
+.main{
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+//for chechkbox list
+
+.inbox {
+    max-width:400px;
+    
+    background:white;
+    border-radius:5px;
+    box-shadow: 2px rgba(0,0,0,0.1);
+  }
+  .item {
+    display:flex;
+    align-items:center;
+  
+  }
+  .item:last-child {
+    border-bottom:0;
+  }
+  input:checked + p {
+    background:#F9F9F9;
+   
+  }
+  input[type="checkbox"] {
+    margin: 12px;
+    width: 20px;
+    height: 20px;
+    color: #722dcc;
+  }
+  p {
+    margin:0;
+    padding:10px;
+    transition:background 0.2s;
+    flex:1;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+  }
+
+
+  //for evaluation cards
+  h5{
+    font:bold;
+     /* text-align: center; */
+ }
+ .form-control{
+     width: 250px;
+     justify-content: center;
+ }
+ 
+ .main1{
+     width: 90%; 
+     padding-top: 30px;
+      padding: 30px; 
+      display: flex;
+       flex-direction: column;
+       margin: 0 auto;
+       background-color: rgb(238, 226, 245);
+       border: 2px solid #dedede;
+       border-radius: 5px;
+ }
+ 
+ .main2{
+   /* margin: 0 auto; */
+     padding: 10px;
+     width: 50%;
+     display: flex;
+     flex-direction: row;
+     padding-top: 20px;
+ }
+ 
+ .part1{
+       display: flex;
+       flex-direction: row;
+       width: 100%; 
+       margin: 0 auto; 
+ }
+ 
+ .part2{
+     display: flex;
+      flex-direction: row;
+       padding-top: 10px;
+       width: 100%; 
+       margin: 0 auto;
+ 
+       
+ }
+ 
+ @media only screen and (min-device-width : 300px)
+ and (max-width: 1100px){
+     .main1{
+         width: 100% !important; 
+         padding-top: 10px;
+          /* padding: 10px;  */
+          display: flex;
+           flex-direction: column;
+      ;
+     }
+     .part1{
+         display: flex;
+         flex-direction:column;
+         width: 100%; 
+         margin: 0 auto; 
+   }
+   
+   .part2{
+       display: flex;
+        flex-direction: column;
+         padding-top: 20px;
+         width: 100%; 
+         margin: 0 auto;
+   }
+ 
+ }
+ 

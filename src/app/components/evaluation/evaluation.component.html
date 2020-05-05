@@ -1,0 +1,298 @@
+<div class="browser-template">
+    <div class="browser-template__top-bar">
+
+
+        <div class="browser-template__address">
+
+        </div>
+
+        <ul class="browser-template__controls">
+            <li class="browser-template__controls_item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path fill="currentColor"
+                        d="M229.9 473.899l19.799-19.799c4.686-4.686 4.686-12.284 0-16.971L94.569 282H436c6.627 0 12-5.373 12-12v-28c0-6.627-5.373-12-12-12H94.569l155.13-155.13c4.686-4.686 4.686-12.284 0-16.971L229.9 38.101c-4.686-4.686-12.284-4.686-16.971 0L3.515 247.515c-4.686 4.686-4.686 12.284 0 16.971L212.929 473.9c4.686 4.686 12.284 4.686 16.971-.001z" />
+                </svg>
+            </li>
+            <li class="browser-template__controls_item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path fill="currentColor"
+                        d="M218.101 38.101L198.302 57.9c-4.686 4.686-4.686 12.284 0 16.971L353.432 230H12c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h341.432l-155.13 155.13c-4.686 4.686-4.686 12.284 0 16.971l19.799 19.799c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L235.071 38.101c-4.686-4.687-12.284-4.687-16.97 0z" />
+                </svg>
+            </li>
+            <li class="browser-template__controls_item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path fill="currentColor"
+                        d="M483.515 28.485L431.35 80.65C386.475 35.767 324.485 8 256.001 8 119.34 8 7.9 119.525 8 256.185 8.1 393.067 119.095 504 256 504c63.926 0 122.202-24.187 166.178-63.908 5.113-4.618 5.353-12.561.482-17.433l-19.738-19.738c-4.498-4.498-11.753-4.785-16.501-.552C351.787 433.246 306.105 452 256 452c-108.321 0-196-87.662-196-196 0-108.321 87.662-196 196-196 54.163 0 103.157 21.923 138.614 57.386l-54.128 54.129c-7.56 7.56-2.206 20.485 8.485 20.485H492c6.627 0 12-5.373 12-12V36.971c0-10.691-12.926-16.045-20.485-8.486z" />
+                </svg>
+            </li>
+        </ul>
+    </div>
+    <br>
+
+    <div class="main1" >
+        <div  class="part1">
+            <div style="width: 50%;">
+    
+                <h5>Name Of the Agent</h5>
+                <mat-form-field style="width: 90%; font-family: 'Poppins', sans-serif;" appearance="outline">
+                    <mat-label>Agent Name</mat-label>
+                    <mat-select style="font-family: 'Poppins', sans-serif;">
+                      <mat-option *ngFor="let agent of agents" [value]="agent.value" style="font-family: 'Poppins', sans-serif;">
+                        {{agent.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+    
+            </div>
+        
+                <div class="main2">
+                    
+                    <div style="width: 40%; display: flex; flex-direction: column; justify-content: space-between; margin-top: 20px;">
+                    
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="boolean" value="Inbound" (click)="setradio('Inbound')" ngModel>
+                             Inbound
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="boolean" value="Outbound" (click)="setradio('Outbound')" ngModel>
+                             Outbound 
+                        </label>
+                    </div>
+                </div>
+
+                    <div style="width: 60%; display: flex; flex-direction: row; ">
+                        <div *ngIf="isSelected('Inbound')" class="content" style="padding-left: 20px;">
+                            <mat-form-field style="width: 100%;" appearance="outline">
+                                <mat-label style="font-family: 'Poppins', sans-serif;">Inbound Calls</mat-label>
+                                <mat-select>
+                                  <mat-option *ngFor="let inbound of inbounds" [value]="inbound.value" style="font-family: 'Poppins', sans-serif;">
+                                    {{inbound.viewValue}}
+                                  </mat-option>
+                                </mat-select>
+                              </mat-form-field>
+    
+                        </div>
+                        <div *ngIf="isSelected('Outbound')" class="content" style="padding-left: 20px;">
+                          
+                          
+                                <mat-form-field  style="width: 100%;" appearance="outline">
+                                    <mat-label>Outbound Calls</mat-label>
+                                    <mat-select  style="width: 100%;" >
+                                      <mat-option *ngFor="let outbound of outbounds" [value]="outbound.value">
+                                        {{outbound.viewValue}}
+                                      </mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+        
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+            <div class="part2">
+                <div style="width:50%; "> 
+                    <h5>Select Process/Client</h5>
+                    <mat-form-field style="width: 90%;" appearance="outline">
+                        <mat-label>Client Name</mat-label>
+                        <mat-select style="font-family: 'Poppins', sans-serif;">
+                          <mat-option *ngFor="let client of clients" [value]="client.value" style="font-family: 'Poppins', sans-serif;">
+                            {{client.viewValue}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </div>
+                <div style="width:50%; ">
+                    <h5>Enter Caller ID</h5>
+                    <mat-form-field style="width: 90%; font-family: 'Poppins', sans-serif;" appearance="outline">
+                        <mat-label>Caller ID</mat-label>
+                        <input matInput placeholder="Caller ID" >
+                      </mat-form-field>
+                </div>
+            </div>
+        
+    </div>
+    <br>
+
+    <div class="main">
+        <mat-accordion>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header style="background-color: #7d39d6d5;">
+                    <mat-panel-title style="font-family: 'Poppins', sans-serif; color: white;">
+                        Fatal Errors
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <br>
+                <div style="width: 90%;margin: 0 auto; display: flex; ">
+                    <div style="width: 20%;display: flex; flex-direction: row; flex-wrap: wrap;">
+                        <div class="radio">
+                        <label>
+                            <input type="radio" name="boolean" value="Yes" (click)="setradio('Yes')" ngModel>
+                            Yes
+                        </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="boolean" value="No" (click)="setradio('No')" ngModel>
+                                No
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="boolean" value="N/A" (click)="setradio('N/A')" ngModel>
+                                N/A
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div style="width: 50%; flex-direction: row; flex-wrap: wrap;">
+                        
+                        <div *ngIf="isSelected('Yes')">
+                            Working Fine
+                        </div>
+
+                        <div *ngIf="isSelected('No')">
+                            <div class="inbox">
+                                <div class="item">
+                                  <input type="checkbox">
+                                  <p>Incorrect information given about the product</p>
+                                </div>
+                                <div class="item">
+                                  <input type="checkbox">
+                                  <p>Check one item</p>
+                                </div>
+                                <div class="item">
+                                  <input type="checkbox">
+                                  <p>Hold down your Shift key</p>
+                                </div>
+                                <div class="item">
+                                  <input type="checkbox">
+                                  <p>Wrong commitment given</p>
+                                </div>
+                                <div class="item">
+                                  <input type="checkbox">
+                                  <p>Incomplte or incorrect update/data capture in system done</p>
+                                </div>
+                                <div class="item">
+                                  <input type="checkbox">
+                                  <p>Worng dispositions</p>
+                                </div>
+                                <div class="item">
+                                  <input type="checkbox">
+                                  <p>Not adhering to client SOP will be considered as FATAL ERROR</p>
+                                </div>
+                                
+                              </div>
+                        </div>
+                    </div>
+
+                    <div style="width: 30%; flex-direction: row; flex-wrap: wrap;">
+                        <mat-form-field style="width: 100%;" appearance="outline">
+                            <mat-label style="font-family: 'Poppins', sans-serif;">Comment Here</mat-label>
+                            <textarea matInput  cdkTextareaAutosize
+                            cdkAutosizeMinRows="8"
+                            cdkAutosizeMaxRows="5" placeholder="Ex.Fatal Errors"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div style="width: 90%; margin: 0 auto;">
+                    <button mat-raised-button style="background-color: #11a74b;color: white; float: right; ">Submit</button>
+                </div>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header style="background-color: #7d39d6d5;">
+                    <mat-panel-title style="font-family: 'Poppins', sans-serif; color: white;">
+                        Call Hygen
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <br>
+                <div style="width: 90%;margin: 0 auto; display: flex; ">
+                    <div style="width: 20%;display: flex; flex-direction: row; flex-wrap: wrap;">
+                        <div class="radio">
+                        <label>
+                            <input type="radio" name="boolean" value="Yes" (click)="setradio('Yes')" ngModel>
+                            Yes
+                        </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="boolean" value="No" (click)="setradio('No')" ngModel>
+                                No
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="boolean" value="N/A" (click)="setradio('N/A')" ngModel>
+                                N/A
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div style="width: 50%; flex-direction: row; flex-wrap: wrap;">
+                        
+                        <div *ngIf="isSelected('Yes')">
+                            Working Fine
+                        </div>
+
+                        <div *ngIf="isSelected('No')">
+                            <div class="inbox">
+                                <div class="item">
+                                  <input type="checkbox">
+                                  <p>Incorrect information given about the product</p>
+                                </div>
+                                <div class="item">
+                                  <input type="checkbox">
+                                  <p>Check one item</p>
+                                </div>
+                                <div class="item">
+                                  <input type="checkbox">
+                                  <p>Hold down your Shift key</p>
+                                </div>
+                                <div class="item">
+                                  <input type="checkbox">
+                                  <p>Wrong commitment given</p>
+                                </div>
+                                <div class="item">
+                                  <input type="checkbox">
+                                  <p>Incomplte or incorrect update/data capture in system done</p>
+                                </div>
+                                <div class="item">
+                                  <input type="checkbox">
+                                  <p>Worng dispositions</p>
+                                </div>
+                                <div class="item">
+                                  <input type="checkbox">
+                                  <p>Not adhering to client SOP will be considered as FATAL ERROR</p>
+                                </div>
+                                
+                              </div>
+                        </div>
+                    </div>
+
+                    <div style="width: 30%; flex-direction: row; flex-wrap: wrap;">
+                        <mat-form-field style="width: 100%;" appearance="outline">
+                            <mat-label style="font-family: 'Poppins', sans-serif;">Comment Here</mat-label>
+                            <textarea matInput  cdkTextareaAutosize
+                            cdkAutosizeMinRows="8"
+                            cdkAutosizeMaxRows="5" placeholder="Ex.Fatal Errors"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div style="width: 90%; margin: 0 auto;">
+                    <button mat-raised-button style="background-color: #11a74b;color: white; float: right; ">Submit</button>
+                </div>
+            </mat-expansion-panel>
+
+           
+
+        </mat-accordion>
+
+    </div>
+
+
+    <br>
+</div>
