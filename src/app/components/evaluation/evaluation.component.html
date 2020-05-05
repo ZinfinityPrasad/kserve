@@ -31,7 +31,7 @@
 
     <div class="main1">
         <div class="part1">
-            <div style="width: 50%;">
+            <div  class="agent_drop">
 
                 <h5>Name Of the Agent</h5>
                 <mat-form-field style="width: 90%; font-family: 'Poppins', sans-serif;" appearance="outline">
@@ -48,8 +48,7 @@
 
             <div class="main2">
 
-                <div
-                    style="width: 40%; display: flex; flex-direction: column; justify-content: space-between; margin-top: 20px;">
+                <div  class="in_outbound">
 
                     <div class="radio">
                         <label>
@@ -65,7 +64,7 @@
                     </div>
                 </div>
 
-                <div style="width: 60%; display: flex; flex-direction: row; ">
+                <div  class="call_type">
                     <div *ngIf="isSelected('Inbound')" class="content" style="padding-left: 20px;">
                         <mat-form-field style="width: 100%;" appearance="outline">
                             <mat-label style="font-family: 'Poppins', sans-serif;">Inbound Calls</mat-label>
@@ -96,7 +95,7 @@
             </div>
         </div>
         <div class="part2">
-            <div style="width:50%; ">
+            <div class="select_client">
                 <h5>Select Process/Client</h5>
                 <mat-form-field style="width: 90%;" appearance="outline">
                     <mat-label>Client Name</mat-label>
@@ -108,7 +107,7 @@
                     </mat-select>
                 </mat-form-field>
             </div>
-            <div style="width:50%; ">
+            <div class="select_client">
                 <h5>Enter Caller ID</h5>
                 <mat-form-field style="width: 90%; font-family: 'Poppins', sans-serif;" appearance="outline">
                     <mat-label>Caller ID</mat-label>
