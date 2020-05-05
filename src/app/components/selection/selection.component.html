@@ -6,8 +6,8 @@
             <mat-form-field appearance="outline" style="width: 100%;">
                 <mat-label>Select One Process</mat-label>
                 <mat-select>
-                    <mat-option *ngFor="let process of processes" [value]="process.value">
-                        {{process.viewValue}}
+                    <mat-option *ngFor="let process of (processes | async)" [value]="process.code">
+                        {{process.name}}
                     </mat-option>
                 </mat-select>
             </mat-form-field>

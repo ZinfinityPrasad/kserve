@@ -1,3 +1,4 @@
+import { Process } from './../../model/process';
 import { Component, OnInit } from '@angular/core';
 
 export interface PeriodicElement {
@@ -5,11 +6,6 @@ export interface PeriodicElement {
   position: number;
   agent: number;
   calltype: string;
-}
-
-interface Process {
-  value: string;
-  viewValue: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
@@ -34,11 +30,7 @@ export class ViewallagentsComponent implements OnInit {
   dataSource = ELEMENT_DATA;
 
   
-  process: Process[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
+  process: Process[] = [];
 
   constructor() { }
 

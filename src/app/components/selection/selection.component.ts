@@ -1,9 +1,9 @@
+import { Observable, BehaviorSubject } from 'rxjs';
+import { Process } from './../../model/process';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { FireService } from './../../service/fire-service.service';
 import { Component, OnInit } from '@angular/core';
-
-interface Process {
-  value: string;
-  viewValue: string;
-}
 
 interface Inbound {
   value: string;
@@ -21,11 +21,6 @@ interface Outbound {
 })
 export class SelectionComponent implements OnInit {
 
-  processes: Process[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
   inbounds: Inbound[] = [
     {value: 'steak-0', viewValue: 'Inbound'},
     {value: 'pizza-1', viewValue: 'Tanmay'},
@@ -36,10 +31,19 @@ export class SelectionComponent implements OnInit {
     {value: 'pizza-1', viewValue: 'Tanmay'},
     {value: 'tacos-2', viewValue: 'Chjiv'}
   ];
+  processsource = new BehaviorSubject({});
+  processes= this.processsource.asObservable();
 
-  constructor() { }
+  constructor(private db: FireService,
+    private snackbar: MatSnackBar,
+    private router: Router) { }
 
   ngOnInit() {
-  }
-
+    this.db.getCollection('process').subscribe((data: Process[]) =>{
+      if(data.length >0){
+          this.processsource.next(data);
+      }
+    });
+  } 
+  
 }

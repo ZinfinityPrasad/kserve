@@ -14,6 +14,7 @@ import { SelectionComponent } from './components/selection/selection.component';
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
+import { AuthGuard } from './guard/auth.guard';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { environment } from 'src/environments/environment';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

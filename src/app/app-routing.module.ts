@@ -1,3 +1,4 @@
+import { AuthGuard } from './guard/auth.guard';
 import { SelectionComponent } from './components/selection/selection.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -9,9 +10,9 @@ import { ViewallagentsComponent } from './components/viewallagents/viewallagents
 
 const routes: Routes = [
   {path: '', component:LoginComponent},
-  {path: 'process',  component:SelectionComponent},
-  {path: 'evaluation', component:EvaluationComponent},
-  {path: 'viewallagents', component: ViewallagentsComponent}
+  {path: 'process',  component:SelectionComponent, canActivate:[AuthGuard]},
+  {path: 'evaluation', component:EvaluationComponent, canActivate:[AuthGuard]},
+  {path: 'viewallagents', component: ViewallagentsComponent, canActivate:[AuthGuard]}
 ];
 
 @NgModule({
