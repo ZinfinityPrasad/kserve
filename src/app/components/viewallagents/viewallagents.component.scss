@@ -1,7 +1,7 @@
 table {
     width:100%;
    
-
+    
   }
 
   .example-container {
@@ -11,13 +11,16 @@ table {
 
   .main{
     width: 90%;
+  
     margin: 0 auto;
+    margin-top: 100px;
   }
 
   .mat-toolbar{
       width: 100%;
+      z-index: 999;
+      height: 80px;
+      position: fixed;
   }
 
-  .mat-option{
-      font-size: 10px !important;
-  }
+  
