@@ -53,61 +53,32 @@
                 <br>
                 <div style="width: 75%; margin: 0 auto;">
                     <h4 style="font-family: 'Montserrat', sans-serif;">Select Call Type</h4>
-                
-                        <div class="radio">
+                    <br>
+                    <div style="display: flex; flex-direction: row;">
+                        <div class="radio" style="display: flex; flex-direction: row;">
                             <label>
                                 <input type="radio" name="boolean" value="Inbound" (click)="setradio('Inbound')"
                                     ngModel>
                                  Inbound
                             </label>
                         </div>
-                        <div class="radio">
+                        <div class="radio" style="display: flex; flex-direction: row; margin-left: 20px;">
                             <label>
                                 <input type="radio" name="boolean" value="Outbound" (click)="setradio('Outbound')"
                                     ngModel>
                                  Outbound 
                             </label>
                         </div>
-
-                        <div style="padding-top: 20px;">
-                            <div *ngIf="isSelected('Inbound')" class="content" style="padding-left: 20px;">
-                                <mat-form-field appearance="outline" style="width: 100%;">
-                                    <mat-label>Inbound Calls</mat-label>
-                                    <mat-select>
-                                        <mat-option *ngFor="let inbound of inbounds" [value]="inbound.value">
-                                            {{inbound.viewValue}}
-                                        </mat-option>
-                                    </mat-select>
-                                </mat-form-field>
-
-                            </div>
-                            <div *ngIf="isSelected('Outbound')" class="content" style="padding-left: 20px;">
-
-
-                                <mat-form-field appearance="outline" style="width: 100%;">
-                                    <mat-label>Outbound Calls</mat-label>
-                                    <mat-select>
-                                        <mat-option *ngFor="let outbound of outbounds" [value]="outbound.value">
-                                            {{outbound.viewValue}}
-                                        </mat-option>
-                                    </mat-select>
-                                </mat-form-field>
-
-                            </div>
-                        </div>
+                    </div>
+            
                         <div style="float: right;">
                             <button mat-raised-button matStepperPrevious color="">Back</button>
-                            <button mat-raised-button routerLink="/evaluation">Next</button>
+                            <button mat-raised-button  color="primary" routerLink="/viewallagents">Next</button>
                         </div>
-                </div>
-
-
-
-                
+                </div> 
             </mat-step>
-            <!-- <mat-step label="Step 3">
-                <p>You're welcome.</p>
-            </mat-step> -->
+
+            
 
             <!-- Icon overrides. -->
             <ng-template matStepperIcon="phone">

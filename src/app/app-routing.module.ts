@@ -3,12 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { ProcessComponent } from './components/process/process.component';
 import { EvaluationComponent } from './components/evaluation/evaluation.component';
+import { ViewallagentsComponent } from './components/viewallagents/viewallagents.component';
 
 
 const routes: Routes = [
   {path: '', component:LoginComponent},
   {path: 'process',  component:ProcessComponent},
-  {path: 'evaluation', component:EvaluationComponent}
+  {path: 'evaluation', component:EvaluationComponent},
+  {path: 'viewallagents', component: ViewallagentsComponent}
 ];
 
 @NgModule({

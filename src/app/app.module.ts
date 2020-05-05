@@ -9,12 +9,14 @@ import { LoginComponent } from './components/login/login.component';
 import { ProcessComponent } from './components/process/process.component';
 import { EvaluationComponent } from './components/evaluation/evaluation.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ViewallagentsComponent } from './components/viewallagents/viewallagents.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ProcessComponent,
-    EvaluationComponent
+    EvaluationComponent,
+    ViewallagentsComponent
   ],
   imports: [
     BrowserModule,
