@@ -29,90 +29,94 @@
     </div>
     <br>
 
-    <div class="main1" >
-        <div  class="part1">
+    <div class="main1">
+        <div class="part1">
             <div style="width: 50%;">
-    
+
                 <h5>Name Of the Agent</h5>
                 <mat-form-field style="width: 90%; font-family: 'Poppins', sans-serif;" appearance="outline">
                     <mat-label>Agent Name</mat-label>
                     <mat-select style="font-family: 'Poppins', sans-serif;">
-                      <mat-option *ngFor="let agent of agents" [value]="agent.value" style="font-family: 'Poppins', sans-serif;">
-                        {{agent.viewValue}}
-                      </mat-option>
+                        <mat-option *ngFor="let agent of agents" [value]="agent.value"
+                            style="font-family: 'Poppins', sans-serif;">
+                            {{agent.viewValue}}
+                        </mat-option>
                     </mat-select>
-                  </mat-form-field>
-    
+                </mat-form-field>
+
             </div>
-        
-                <div class="main2">
-                    
-                    <div style="width: 40%; display: flex; flex-direction: column; justify-content: space-between; margin-top: 20px;">
-                    
+
+            <div class="main2">
+
+                <div
+                    style="width: 40%; display: flex; flex-direction: column; justify-content: space-between; margin-top: 20px;">
+
                     <div class="radio">
                         <label>
                             <input type="radio" name="boolean" value="Inbound" (click)="setradio('Inbound')" ngModel>
-                             Inbound
+                            Inbound
                         </label>
                     </div>
                     <div class="radio">
                         <label>
                             <input type="radio" name="boolean" value="Outbound" (click)="setradio('Outbound')" ngModel>
-                             Outbound 
+                            Outbound
                         </label>
                     </div>
                 </div>
 
-                    <div style="width: 60%; display: flex; flex-direction: row; ">
-                        <div *ngIf="isSelected('Inbound')" class="content" style="padding-left: 20px;">
-                            <mat-form-field style="width: 100%;" appearance="outline">
-                                <mat-label style="font-family: 'Poppins', sans-serif;">Inbound Calls</mat-label>
-                                <mat-select>
-                                  <mat-option *ngFor="let inbound of inbounds" [value]="inbound.value" style="font-family: 'Poppins', sans-serif;">
+                <div style="width: 60%; display: flex; flex-direction: row; ">
+                    <div *ngIf="isSelected('Inbound')" class="content" style="padding-left: 20px;">
+                        <mat-form-field style="width: 100%;" appearance="outline">
+                            <mat-label style="font-family: 'Poppins', sans-serif;">Inbound Calls</mat-label>
+                            <mat-select>
+                                <mat-option *ngFor="let inbound of inbounds" [value]="inbound.value"
+                                    style="font-family: 'Poppins', sans-serif;">
                                     {{inbound.viewValue}}
-                                  </mat-option>
-                                </mat-select>
-                              </mat-form-field>
-    
-                        </div>
-                        <div *ngIf="isSelected('Outbound')" class="content" style="padding-left: 20px;">
-                          
-                          
-                                <mat-form-field  style="width: 100%;" appearance="outline">
-                                    <mat-label>Outbound Calls</mat-label>
-                                    <mat-select  style="width: 100%;" >
-                                      <mat-option *ngFor="let outbound of outbounds" [value]="outbound.value">
-                                        {{outbound.viewValue}}
-                                      </mat-option>
-                                    </mat-select>
-                                  </mat-form-field>
-        
-                        </div>
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
                     </div>
-                
+                    <div *ngIf="isSelected('Outbound')" class="content" style="padding-left: 20px;">
+
+
+                        <mat-form-field style="width: 100%;" appearance="outline">
+                            <mat-label>Outbound Calls</mat-label>
+                            <mat-select style="width: 100%;">
+                                <mat-option *ngFor="let outbound of outbounds" [value]="outbound.value">
+                                    {{outbound.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                    </div>
+                </div>
+
             </div>
         </div>
-            <div class="part2">
-                <div style="width:50%; "> 
-                    <h5>Select Process/Client</h5>
-                    <mat-form-field style="width: 90%;" appearance="outline">
-                        <mat-label>Client Name</mat-label>
-                        <mat-select style="font-family: 'Poppins', sans-serif;">
-                          <mat-option *ngFor="let client of clients" [value]="client.value" style="font-family: 'Poppins', sans-serif;">
+        <div class="part2">
+            <div style="width:50%; ">
+                <h5>Select Process/Client</h5>
+                <mat-form-field style="width: 90%;" appearance="outline">
+                    <mat-label>Client Name</mat-label>
+                    <mat-select style="font-family: 'Poppins', sans-serif;">
+                        <mat-option *ngFor="let client of clients" [value]="client.value"
+                            style="font-family: 'Poppins', sans-serif;">
                             {{client.viewValue}}
-                          </mat-option>
-                        </mat-select>
-                      </mat-form-field>
-                </div>
-                <div style="width:50%; ">
-                    <h5>Enter Caller ID</h5>
-                    <mat-form-field style="width: 90%; font-family: 'Poppins', sans-serif;" appearance="outline">
-                        <mat-label>Caller ID</mat-label>
-                        <input matInput placeholder="Caller ID" >
-                      </mat-form-field>
-                </div>
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
             </div>
-        
+            <div style="width:50%; ">
+                <h5>Enter Caller ID</h5>
+                <mat-form-field style="width: 90%; font-family: 'Poppins', sans-serif;" appearance="outline">
+                    <mat-label>Caller ID</mat-label>
+                    <input matInput placeholder="Caller ID">
+                </mat-form-field>
+            </div>
+        </div>
+
     </div>
     <br>
 
@@ -128,10 +132,10 @@
                 <div style="width: 90%;margin: 0 auto; display: flex; ">
                     <div style="width: 20%;display: flex; flex-direction: row; flex-wrap: wrap;">
                         <div class="radio">
-                        <label>
-                            <input type="radio" name="boolean" value="Yes" (click)="setradio('Yes')" ngModel>
-                            Yes
-                        </label>
+                            <label>
+                                <input type="radio" name="boolean" value="Yes" (click)="setradio('Yes')" ngModel>
+                                Yes
+                            </label>
                         </div>
                         <div class="radio">
                             <label>
@@ -149,7 +153,7 @@
                     </div>
 
                     <div style="width: 50%; flex-direction: row; flex-wrap: wrap;">
-                        
+
                         <div *ngIf="isSelected('Yes')">
                             Working Fine
                         </div>
@@ -157,65 +161,61 @@
                         <div *ngIf="isSelected('No')">
                             <div class="inbox">
                                 <div class="item">
-                                  <input type="checkbox">
-                                  <p>Incorrect information given about the product</p>
+                                    <input type="checkbox">
+                                    <p>Incorrect information given about the product</p>
                                 </div>
                                 <div class="item">
-                                  <input type="checkbox">
-                                  <p>Check one item</p>
+                                    <input type="checkbox">
+                                    <p>Wrong commitment given</p>
                                 </div>
                                 <div class="item">
-                                  <input type="checkbox">
-                                  <p>Hold down your Shift key</p>
+                                    <input type="checkbox">
+                                    <p>Incomplte or incorrect update/data capture in system</p>
                                 </div>
                                 <div class="item">
-                                  <input type="checkbox">
-                                  <p>Wrong commitment given</p>
+                                    <input type="checkbox">
+                                    <p>Worng dispositions</p>
                                 </div>
                                 <div class="item">
-                                  <input type="checkbox">
-                                  <p>Incomplte or incorrect update/data capture in system done</p>
+                                    <input type="checkbox">
+                                    <p>Not adhering to client SOP will be considered as FATAL ERROR</p>
                                 </div>
-                                <div class="item">
-                                  <input type="checkbox">
-                                  <p>Worng dispositions</p>
-                                </div>
-                                <div class="item">
-                                  <input type="checkbox">
-                                  <p>Not adhering to client SOP will be considered as FATAL ERROR</p>
-                                </div>
-                                
-                              </div>
+
+                            </div>
+                        </div>
+                        <div *ngIf="isSelected('N/A')">
+                            Call Not Recieved
                         </div>
                     </div>
 
                     <div style="width: 30%; flex-direction: row; flex-wrap: wrap;">
                         <mat-form-field style="width: 100%;" appearance="outline">
                             <mat-label style="font-family: 'Poppins', sans-serif;">Comment Here</mat-label>
-                            <textarea matInput  cdkTextareaAutosize
-                            cdkAutosizeMinRows="8"
-                            cdkAutosizeMaxRows="5" placeholder="Ex.Fatal Errors"></textarea>
+                            <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="8" cdkAutosizeMaxRows="5"
+                                placeholder="Ex.Fatal Errors"></textarea>
                         </mat-form-field>
                     </div>
                 </div>
                 <div style="width: 90%; margin: 0 auto;">
-                    <button mat-raised-button style="background-color: #11a74b;color: white; float: right; ">Submit</button>
+                    <button mat-raised-button
+                        style="background-color: #11a74b;color: white; float: right; ">Submit</button>
                 </div>
             </mat-expansion-panel>
+            <br>
             <mat-expansion-panel>
                 <mat-expansion-panel-header style="background-color: #7d39d6d5;">
                     <mat-panel-title style="font-family: 'Poppins', sans-serif; color: white;">
-                        Call Hygen
+                        CALL HYGINE
                     </mat-panel-title>
                 </mat-expansion-panel-header>
                 <br>
                 <div style="width: 90%;margin: 0 auto; display: flex; ">
                     <div style="width: 20%;display: flex; flex-direction: row; flex-wrap: wrap;">
                         <div class="radio">
-                        <label>
-                            <input type="radio" name="boolean" value="Yes" (click)="setradio('Yes')" ngModel>
-                            Yes
-                        </label>
+                            <label>
+                                <input type="radio" name="boolean" value="Yes" (click)="setradio('Yes')" ngModel>
+                                Yes
+                            </label>
                         </div>
                         <div class="radio">
                             <label>
@@ -233,7 +233,7 @@
                     </div>
 
                     <div style="width: 50%; flex-direction: row; flex-wrap: wrap;">
-                        
+
                         <div *ngIf="isSelected('Yes')">
                             Working Fine
                         </div>
@@ -241,54 +241,368 @@
                         <div *ngIf="isSelected('No')">
                             <div class="inbox">
                                 <div class="item">
-                                  <input type="checkbox">
-                                  <p>Incorrect information given about the product</p>
+                                    <input type="checkbox">
+                                    <p>Call Opening</p>
                                 </div>
                                 <div class="item">
-                                  <input type="checkbox">
-                                  <p>Check one item</p>
+                                    <input type="checkbox">
+                                    <p>Telephone etiquettes</p>
                                 </div>
                                 <div class="item">
-                                  <input type="checkbox">
-                                  <p>Hold down your Shift key</p>
+                                    <input type="checkbox">
+                                    <p>Pace</p>
                                 </div>
                                 <div class="item">
-                                  <input type="checkbox">
-                                  <p>Wrong commitment given</p>
+                                    <input type="checkbox">
+                                    <p>Intonation</p>
                                 </div>
                                 <div class="item">
-                                  <input type="checkbox">
-                                  <p>Incomplte or incorrect update/data capture in system done</p>
+                                    <input type="checkbox">
+                                    <p>Call control</p>
                                 </div>
                                 <div class="item">
-                                  <input type="checkbox">
-                                  <p>Worng dispositions</p>
+                                    <input type="checkbox">
+                                    <p>Speech clarity</p>
                                 </div>
                                 <div class="item">
-                                  <input type="checkbox">
-                                  <p>Not adhering to client SOP will be considered as FATAL ERROR</p>
+                                    <input type="checkbox">
+                                    <p>Call closing</p>
                                 </div>
-                                
-                              </div>
+                                <div class="item">
+                                    <input type="checkbox">
+                                    <p>Empathy</p>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox">
+                                    <p>Sympathy</p>
+                                </div>
+
+                            </div>
+                            
+                        </div>
+                        <div *ngIf="isSelected('N/A')">
+                            Call Not Recieved
                         </div>
                     </div>
 
                     <div style="width: 30%; flex-direction: row; flex-wrap: wrap;">
                         <mat-form-field style="width: 100%;" appearance="outline">
                             <mat-label style="font-family: 'Poppins', sans-serif;">Comment Here</mat-label>
-                            <textarea matInput  cdkTextareaAutosize
-                            cdkAutosizeMinRows="8"
-                            cdkAutosizeMaxRows="5" placeholder="Ex.Fatal Errors"></textarea>
+                            <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="8" cdkAutosizeMaxRows="5"
+                                placeholder="Ex. Call Hygen"></textarea>
                         </mat-form-field>
                     </div>
                 </div>
                 <div style="width: 90%; margin: 0 auto;">
-                    <button mat-raised-button style="background-color: #11a74b;color: white; float: right; ">Submit</button>
+                    <button mat-raised-button
+                        style="background-color: #11a74b;color: white; float: right; ">Submit</button>
                 </div>
             </mat-expansion-panel>
+            <br>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header style="background-color: #7d39d6d5;">
+                    <mat-panel-title style="font-family: 'Poppins', sans-serif; color: white;">
+                        EFFORTS
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <br>
+                <div style="width: 90%;margin: 0 auto; display: flex; ">
+                    <div style="width: 20%;display: flex; flex-direction: row; flex-wrap: wrap;">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="boolean" value="Yes" (click)="setradio('Yes')" ngModel>
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="boolean" value="No" (click)="setradio('No')" ngModel>
+                                No
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="boolean" value="N/A" (click)="setradio('N/A')" ngModel>
+                                N/A
+                            </label>
 
-           
+                        </div>
+                    </div>
 
+                    <div style="width: 50%; flex-direction: row; flex-wrap: wrap;">
+
+                        <div *ngIf="isSelected('Yes')">
+                            Working Fine
+                        </div>
+
+                        <div *ngIf="isSelected('No')">
+                            <div class="inbox">
+                                <div class="item">
+                                    <input type="checkbox">
+                                    <p> Up-selling</p>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox">
+                                    <p>Doing all relevant activities to capture the information</p>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox">
+                                    <p>Close of sale/FCR(First Call Resolution)</p>
+                                </div>
+                            </div>  
+                        </div>
+                        <div *ngIf="isSelected('N/A')">
+                            Call Not Recieved
+                        </div>
+                    </div>
+
+                    <div style="width: 30%; flex-direction: row; flex-wrap: wrap;">
+                        <mat-form-field style="width: 100%;" appearance="outline">
+                            <mat-label style="font-family: 'Poppins', sans-serif;">Comment Here</mat-label>
+                            <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="8" cdkAutosizeMaxRows="5"
+                                placeholder="Ex. Efforts"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div style="width: 90%; margin: 0 auto;">
+                    <button mat-raised-button
+                        style="background-color: #11a74b;color: white; float: right; ">Submit</button>
+                </div>
+            </mat-expansion-panel>
+            <br>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header style="background-color: #7d39d6d5;">
+                    <mat-panel-title style="font-family: 'Poppins', sans-serif; color: white;">
+                        PRODUCT KNOWLEDGE
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <br>
+                <div style="width: 90%;margin: 0 auto; display: flex; ">
+                    <div style="width: 20%;display: flex; flex-direction: row; flex-wrap: wrap;">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="boolean" value="Yes" (click)="setradio('Yes')" ngModel>
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="boolean" value="No" (click)="setradio('No')" ngModel>
+                                No
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="boolean" value="N/A" (click)="setradio('N/A')" ngModel>
+                                N/A
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div style="width: 50%; flex-direction: row; flex-wrap: wrap;">
+
+                        <div *ngIf="isSelected('Yes')">
+                            Working Fine
+                        </div>
+
+                        <div *ngIf="isSelected('No')">
+                            <div class="inbox">
+                                <div class="item">
+                                    <input type="checkbox">
+                                    <p> Product Information</p>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox">
+                                    <p>Schemes</p>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox">
+                                    <p>Discounts</p>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox">
+                                    <p>Information to gather from guest on call</p>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox">
+                                    <p>Updates</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div *ngIf="isSelected('N/A')">
+                            Call Not Recieved
+                        </div>
+                    </div>
+
+                    <div style="width: 30%; flex-direction: row; flex-wrap: wrap;">
+                        <mat-form-field style="width: 100%;" appearance="outline">
+                            <mat-label style="font-family: 'Poppins', sans-serif;">Comment Here</mat-label>
+                            <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="8" cdkAutosizeMaxRows="5"
+                                placeholder="Ex.Product Knowledge Errors"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div style="width: 90%; margin: 0 auto;">
+                    <button mat-raised-button
+                        style="background-color: #11a74b;color: white; float: right; ">Submit</button>
+                </div>
+            </mat-expansion-panel>
+            <br>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header style="background-color: #7d39d6d5;">
+                    <mat-panel-title style="font-family: 'Poppins', sans-serif; color: white;">
+                        CUSTOMER EXPRIENCE
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <br>
+                <div style="width: 90%;margin: 0 auto; display: flex; ">
+                    <div style="width: 20%;display: flex; flex-direction: row; flex-wrap: wrap;">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="boolean" value="Yes" (click)="setradio('Yes')" ngModel>
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="boolean" value="No" (click)="setradio('No')" ngModel>
+                                No
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="boolean" value="N/A" (click)="setradio('N/A')" ngModel>
+                                N/A
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div style="width: 50%; flex-direction: row; flex-wrap: wrap;">
+
+                        <div *ngIf="isSelected('Yes')">
+                            Working Fine
+                        </div>
+
+                        <div *ngIf="isSelected('No')">
+                            <div class="inbox">
+                                <div class="item">
+                                    <input type="checkbox">
+                                    <p>Rudenss by Agent </p>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox">
+                                    <p>Courtesy and Politeness</p>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox">
+                                    <p>Intruption and not allowing the guest on call </p>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox">
+                                    <p>Updates</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="isSelected('N/A')">
+                            Call Not Recieved
+                        </div>
+                    </div>
+
+                    <div style="width: 30%; flex-direction: row; flex-wrap: wrap;">
+                        <mat-form-field style="width: 100%;" appearance="outline">
+                            <mat-label style="font-family: 'Poppins', sans-serif;">Comment Here</mat-label>
+                            <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="8" cdkAutosizeMaxRows="5"
+                                placeholder="Ex. Customer Exprience Errors"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div style="width: 90%; margin: 0 auto;">
+                    <button mat-raised-button
+                        style="background-color: #11a74b;color: white; float: right; ">Submit</button>
+                </div>
+            </mat-expansion-panel>
+            <br>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header style="background-color: #7d39d6d5;">
+                    <mat-panel-title style="font-family: 'Poppins', sans-serif; color: white;">
+                        BACKGROUND NOISE
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <br>
+                <div style="width: 90%;margin: 0 auto; display: flex; ">
+                    <div style="width: 20%;display: flex; flex-direction: row; flex-wrap: wrap;">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="boolean" value="Yes" (click)="setradio('Yes')" ngModel>
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="boolean" value="No" (click)="setradio('No')" ngModel>
+                                No
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="boolean" value="N/A" (click)="setradio('N/A')" ngModel>
+                                N/A
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div style="width: 50%; flex-direction: row; flex-wrap: wrap;">
+
+                        <div *ngIf="isSelected('Yes')">
+                            Working Fine
+                        </div>
+
+                        <div *ngIf="isSelected('No')">
+                            <div class="inbox">
+                                <div class="item">
+                                    <input type="checkbox">
+                                    <p>Family voice</p>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox">
+                                    <p>Music</p>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox">
+                                    <p>Songs</p>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox">
+                                    <p>Bell</p>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox">
+                                    <p>Phone rings if heard over the Call</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="isSelected('N/A')">
+                            Call Not Recieved
+                        </div>
+                    </div>
+
+                    <div style="width: 30%; flex-direction: row; flex-wrap: wrap;">
+                        <mat-form-field style="width: 100%;" appearance="outline">
+                            <mat-label style="font-family: 'Poppins', sans-serif;">Comment Here</mat-label>
+                            <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="8" cdkAutosizeMaxRows="5"
+                                placeholder="Ex. Background Noise Errors"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div style="width: 90%; margin: 0 auto;">
+                    <button mat-raised-button
+                        style="background-color: #11a74b;color: white; float: right; ">Submit</button>
+                </div>
+            </mat-expansion-panel>
         </mat-accordion>
 
     </div>
