@@ -1,3 +1,4 @@
+import { Process } from './process';
 import { Document } from './../service/fire-service.service';
 export interface User extends Document{
     
@@ -7,5 +8,6 @@ export interface User extends Document{
     email?:string,
     roles?:string[],
     department?:string[]
-
+    processes?:string[],
+    callTypes?:string[]
 }

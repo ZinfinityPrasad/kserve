@@ -5,8 +5,8 @@
             <h3>Select Process</h3>
             <mat-form-field appearance="outline" style="width: 100%;">
                 <mat-label>Select One Process</mat-label>
-                <mat-select>
-                    <mat-option *ngFor="let process of (processes | async)" [value]="process.code">
+                <mat-select (selectionChange)="processChanged($event.value)">
+                    <mat-option *ngFor="let process of (processes | async)" [value]="process">
                         {{process.name}}
                     </mat-option>
                 </mat-select>
@@ -15,25 +15,18 @@
         <div style="width: 75%; margin: 0 auto;">
             <h4 style="font-family: 'Montserrat', sans-serif;">Select Call Type</h4>
             <br>
-            <div style="display: flex; flex-direction: row;">
-                <div class="radio" style="display: flex; flex-direction: row;">
-                    <label>
-                        <input type="radio" name="boolean" value="Inbound" (click)="setradio('Inbound')"
-                            ngModel>
-                         Inbound
-                    </label>
-                </div>
-                <div class="radio" style="display: flex; flex-direction: row; margin-left: 20px;">
-                    <label>
-                        <input type="radio" name="boolean" value="Outbound" (click)="setradio('Outbound')"
-                            ngModel>
-                         Outbound 
-                    </label>
-                </div>
-            </div>
+            <mat-radio-group style="display: flex; flex-direction: row; justify-content: start;"
+            [(ngModel)]="selectedRad" >
+                <mat-radio-button *ngFor="let rad of radios" 
+                style="margin: 10px;" [value]="rad" (change)="radChanged($event.value)">
+                    {{rad}}
+                </mat-radio-button>
+            </mat-radio-group>
+
         </div> 
         <div>
-            <button mat-raised-button color="primary" style="float: right;" routerLink="/viewallagents"> Next </button>
+            <button mat-raised-button color="primary" style="float: right;" 
+            (click)="navigate()"> Next </button>
         </div>
     </mat-card>
 </div>

@@ -11,8 +11,8 @@ import { ViewallagentsComponent } from './components/viewallagents/viewallagents
 const routes: Routes = [
   {path: '', component:LoginComponent},
   {path: 'process',  component:SelectionComponent, canActivate:[AuthGuard]},
-  {path: 'evaluation', component:EvaluationComponent, canActivate:[AuthGuard]},
-  {path: 'viewallagents', component: ViewallagentsComponent, canActivate:[AuthGuard]}
+  {path: 'eval', component:EvaluationComponent, canActivate:[AuthGuard]},
+  {path: 'agents', component: ViewallagentsComponent, canActivate:[AuthGuard]}
 ];
 
 @NgModule({

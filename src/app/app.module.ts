@@ -15,6 +15,7 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AuthGuard } from './guard/auth.guard';
+import { SpinnerComponent } from './common/spinner.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AuthGuard } from './guard/auth.guard';
     ProcessComponent,
     EvaluationComponent,
     ViewallagentsComponent,
-    SelectionComponent
+    SelectionComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +37,7 @@ import { AuthGuard } from './guard/auth.guard';
     AngularFirestoreModule,
   ],
   providers: [AuthGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[SpinnerComponent]
 })
 export class AppModule { }

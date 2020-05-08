@@ -24,4 +24,7 @@ export class DataSharingService {
     this.userSource.next(null);
     localStorage.clear();
   }
+
+  public process_agent_data: any;
+  public eval_data: any;
 }

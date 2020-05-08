@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
   }
 
   login(username, password){    
-    console.log(username, password);
     this.db.getCollectionWithCondition('user', 'username', '==', username).subscribe(
       (data:User[]) =>{
       if(data.length > 0 ){
@@ -31,9 +30,7 @@ export class LoginComponent implements OnInit {
           this.share.updateUser(user);
           this.router.navigate(['process']);
         }
-      } else{
-        console.log('wrong id ');
-        
+      } else{        
         this.snackbar.open('wrong username/password', 'close', {duration:2000});
       }
     }, err =>{

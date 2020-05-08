@@ -17,9 +17,7 @@ export class AuthGuard implements CanActivate {
     
     let bool: boolean;
     this.share.currentUser.subscribe(data =>{
-      console.log('user values',data);
       if(data!=null || data!= undefined){
-        console.log('coming in true phase');
         bool = true;
         return true;
       }else{

@@ -1,3 +1,4 @@
+import { DataSharingService } from './../../service/data-sharing.service';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { Process } from './../../model/process';
 import { Router } from '@angular/router';
@@ -21,22 +22,17 @@ interface Outbound {
 })
 export class SelectionComponent implements OnInit {
 
-  inbounds: Inbound[] = [
-    {value: 'steak-0', viewValue: 'Inbound'},
-    {value: 'pizza-1', viewValue: 'Tanmay'},
-    {value: 'tacos-2', viewValue: 'Chjiv'}
-  ];
-  outbounds: Outbound[] = [
-    {value: 'steak-0', viewValue: 'Outbound'},
-    {value: 'pizza-1', viewValue: 'Tanmay'},
-    {value: 'tacos-2', viewValue: 'Chjiv'}
-  ];
-  processsource = new BehaviorSubject({});
+  radios: string[] =['inbound', 'outbound']
+  processlist: Process[] = [];
+  processsource = new BehaviorSubject(this.processlist);
   processes= this.processsource.asObservable();
+  selectedRad: string
+  selectedProcess: any
 
   constructor(private db: FireService,
     private snackbar: MatSnackBar,
-    private router: Router) { }
+    private router: Router,
+    private share: DataSharingService) { }
 
   ngOnInit() {
     this.db.getCollection('process').subscribe((data: Process[]) =>{
@@ -45,5 +41,21 @@ export class SelectionComponent implements OnInit {
       }
     });
   } 
+
+  processChanged(value: any){
+    this.selectedProcess = value;
+  } 
+
+  radChanged(value: any){
+    this.selectedRad = value;    
+  }
+
+  navigate(){
+    let type = this.selectedRad;
+    let process = this.selectedProcess;    
+    this.share.process_agent_data = {processname: process.name, 
+      processcode: process.code, type: type};
+    this.router.navigate(['agents']);
+  }
   
 }
